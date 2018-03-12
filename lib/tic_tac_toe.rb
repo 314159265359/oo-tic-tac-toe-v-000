@@ -28,42 +28,42 @@ class TicTacToe
 
   def input_to_index(input)
   index = input.to_i - 1
-end
-
-
-def move(position,character)
-  @board[position] = character
-  display_board
-end
-
-
-def position_taken?(index)
-  if (@board[index] == " " || @board[index] == "" || @board[index] == nil)
-    return false
-  else return true
   end
-end
 
 
-def valid_move?(index)
-  if index.between?(0,8) && !position_taken?(index)
-    return true
-  else return false
+  def move(position,character)
+    @board[position] = character
+    display_board
   end
-end
 
 
-def turn
-  puts "Please enter 1-9:"
-  input = gets.strip
-  index = input_to_index(input)
-  if valid_move?(index)
-    character = current_player
-    move(index,character)
-  else
-    turn
+  def position_taken?(index)
+    if (@board[index] == " " || @board[index] == "" || @board[index] == nil)
+      return false
+    else return true
+    end
   end
-end
+
+
+  def valid_move?(index)
+    if index.between?(0,8) && !position_taken?(index)
+      return true
+    else return false
+    end
+  end
+
+
+  def turn
+    puts "Please enter 1-9:"
+    input = gets.strip
+    index = input_to_index(input)
+    if valid_move?(index)
+      character = current_player
+      move(index,character)
+    else
+      turn
+    end
+  end
 
 
   def current_player
