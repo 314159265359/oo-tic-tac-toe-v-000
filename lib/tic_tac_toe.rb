@@ -53,15 +53,15 @@ def valid_move?(index)
 end
 
 
-def turn(board)
+def turn
   puts "Please enter 1-9:"
   input = gets.strip
   index = input_to_index(input)
-  if valid_move?(board,index)
-    character = current_player(board)
-    move(board,index,character)
+  if valid_move?(index)
+    character = current_player
+    move(index,character)
   else
-    turn(board)
+    turn
   end
 end
 
