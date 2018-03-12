@@ -96,7 +96,7 @@ class TicTacToe
         false
       end
     end
-      if board == [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+      if @board == [" ", " ", " ", " ", " ", " ", " ", " ", " "]
       false
       end
   end
