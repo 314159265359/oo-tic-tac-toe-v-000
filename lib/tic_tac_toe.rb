@@ -40,6 +40,27 @@ def position_taken?(index)
   end
 end
 
+def valid_move?(board,index)
+  if index.between?(0,8) && !position_taken?(board,index)
+    return true
+  else return false
+  end
+end
+
+
+def turn(board)
+  puts "Please enter 1-9:"
+  input = gets.strip
+  index = input_to_index(input)
+  if valid_move?(board,index)
+    character = current_player(board)
+    move(board,index,character)
+  else
+    turn(board)
+  end
+end
+
+
   def current_player
     turn_count % 2 == 0 ? "X" : "O"
   end
