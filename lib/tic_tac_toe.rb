@@ -1,7 +1,9 @@
 class TicTacToe
+  
   def initialize(board = nil)
     @board = board || Array.new(9, " ")
   end
+
 
   WIN_COMBINATIONS = [
     [0,1,2],
@@ -14,6 +16,7 @@ class TicTacToe
     [2,4,6]
   ]
 
+
   def display_board
     puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
     puts "-----------"
@@ -21,6 +24,7 @@ class TicTacToe
     puts "-----------"
     puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
   end
+
 
   def input_to_index(input)
   index = input.to_i - 1
@@ -40,8 +44,9 @@ def position_taken?(index)
   end
 end
 
-def valid_move?(board,index)
-  if index.between?(0,8) && !position_taken?(board,index)
+
+def valid_move?(index)
+  if index.between?(0,8) && !position_taken?(index)
     return true
   else return false
   end
