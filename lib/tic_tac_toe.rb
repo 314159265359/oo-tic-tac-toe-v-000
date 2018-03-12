@@ -104,7 +104,7 @@ class TicTacToe
 
   def full?
     positions = []
-    board.each { |i|
+    @board.each { |i|
       if i == " " || i == nil
         positions << i
       end
