@@ -117,6 +117,34 @@ class TicTacToe
   end
 
 
+  def draw?
+    if full? && !won?
+      true
+    else
+      false
+    end
+  end
+
+
+def over?
+  if won? || draw? || full?
+    true
+  else
+    false
+  end
+end
+
+
+def winner
+  if over? && won?
+    combo = won?
+    letter = combo[0]
+    @board[letter]
+  else nil
+  end
+end
+
+
 
 
 end
