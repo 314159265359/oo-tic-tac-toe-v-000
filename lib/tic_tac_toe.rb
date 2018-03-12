@@ -27,9 +27,9 @@ class TicTacToe
 end
 
 
-def move(board,position,character)
-  board[position] = character
-  display_board(board)
+def move(position,character)
+  @board[position] = character
+  display_board
 end
 
 
