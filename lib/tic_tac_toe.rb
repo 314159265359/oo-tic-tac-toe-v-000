@@ -22,6 +22,24 @@ class TicTacToe
     puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
   end
 
+  def input_to_index(input)
+  index = input.to_i - 1
+end
+
+
+def move(board,position,character)
+  board[position] = character
+  display_board(board)
+end
+
+
+def position_taken?(board, index)
+  if (board[index] == " " || board[index] == "" || board[index] == nil)
+    return false
+  else return true
+  end
+end
+
   def current_player
     turn_count % 2 == 0 ? "X" : "O"
   end
