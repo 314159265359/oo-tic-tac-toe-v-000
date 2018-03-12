@@ -103,14 +103,12 @@ class TicTacToe
 
 
   def full?
-    # positions = []
-    # @board.each { |i|
-    #   if i == " " || i == nil
-    #     positions << i
-    #   end
-    # }
-    positions = @board.count{|position| position == " " || position == nil}
-    if positions.length > 0
+    positions = []
+    @board.each { |i|
+      if i == " " || i == nil
+        positions << i
+      end
+    }
     false
     else
     true
