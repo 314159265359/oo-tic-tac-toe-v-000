@@ -145,6 +145,4 @@ def winner
 end
 
 
-
-
 end
