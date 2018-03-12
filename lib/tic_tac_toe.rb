@@ -109,6 +109,7 @@ class TicTacToe
         positions << i
       end
     }
+    if positions.length > 0
     false
     else
     true
